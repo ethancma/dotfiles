@@ -9,4 +9,3 @@ colorscheme murphy
 
 set autoindent
 set confirm
-set spell
