@@ -1,5 +1,5 @@
 # Ethan's dotfiles
 
-This respository is store my dotfiles for
+This respository is to store my dotfiles for
 * vim
 * zsh
