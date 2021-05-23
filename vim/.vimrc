@@ -18,7 +18,6 @@ endif
 if vim_plug_just_installed
 	:execute 'source '.fnameescape(vim_plug_path)
 endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Spacing
