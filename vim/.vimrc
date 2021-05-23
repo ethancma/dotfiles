@@ -1,3 +1,7 @@
+"""""""
+" VIM "
+"""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETUP
 
@@ -47,14 +51,27 @@ set mouse=a             " Enable mouse use
 set wildignore+=.swp    
 
 " Colors
-set background=dark
-colorscheme murphy
+colorscheme monokai
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'townk/vim-autoclose'
+Plug 'crusoexia/vim-monokai'
 
 call plug#end()
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
