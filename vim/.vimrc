@@ -18,6 +18,7 @@ endif
 if vim_plug_just_installed
 	:execute 'source '.fnameescape(vim_plug_path)
 endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Spacing
@@ -44,6 +45,7 @@ set showcmd
 set showmatch           " Matching brackets/quotes/parenthesis
 set laststatus=2
 set noshowmode          " Disable default statusbar
+set number
 set relativenumber
 set noerrorbells        " Disable annoying sounds 
 set mouse=a             " Enable mouse use
