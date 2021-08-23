@@ -53,6 +53,7 @@ set wildignore+=.swp
 
 " Colors
 colorscheme monokai
+hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
 
 call plug#begin('~/.vim/plugged')
 
