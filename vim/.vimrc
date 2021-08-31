@@ -37,6 +37,7 @@ set splitbelow
 " Searching
 set incsearch
 set ignorecase
+set hlsearch
 
 " Miscellaneous
 syntax on
@@ -48,6 +49,7 @@ set noshowmode          " Disable default statusbar
 set number
 set relativenumber
 set noerrorbells        " Disable annoying sounds 
+set novisualbell
 set mouse=a             " Enable mouse use
 set wildignore+=.swp    
 
@@ -65,6 +67,12 @@ Plug 'crusoexia/vim-monokai'
 
 call plug#end()
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Mappings
+
+" Sets <leader>
+let mapleader=' '
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -77,3 +85,12 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+" Disable search highlighting with <leader><cr>
+map <silent> <leader><cr> :noh<cr>
+
+" Tab Management
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader><left> :tabnext<cr>
+map <leader><right> :tabprev<cr>
