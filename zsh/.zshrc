@@ -30,19 +30,31 @@ bindkey '^F' autosuggest-accept
 alias la="ls -a"
 alias c=clear
 alias desk="cd ~/Desktop"
+alias python="python3"
+alias vi="vim"
 
 # System
 alias finder="open -a Finder"
 alias safari="open -a Safari"
+alias spotify="open -a Spotify"
 alias start="
 open -a Safari
 open -a Spotify
 open -a Mail
 open -a Discord"
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
 
 # Config
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
+
+# -- Functions
+
+function mkcd() {
+    mkdir -p "$@" && cd "$@";
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
