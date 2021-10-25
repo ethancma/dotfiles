@@ -19,7 +19,10 @@ if vim_plug_just_installed
 	:execute 'source '.fnameescape(vim_plug_path)
 endif
 
+source $HOME/dotfiles/vim/mappings.vim
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings
 
 " Spacing
 set tabstop=4 
@@ -49,13 +52,20 @@ set noshowmode          " Disable default statusbar
 set number
 set relativenumber
 set noerrorbells        " Disable annoying sounds 
-set novisualbell
+set belloff=all
 set mouse=a             " Enable mouse use
-set wildignore+=.swp    
+set wildignore+=.swp
 
 " Colors
 colorscheme monokai
 hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configurations
+
+" Instant Markdown
+let g:instant_markdown_slow = 1
+let g:instant_markdown_browser = "safari --new-window"
 
 call plug#begin('~/.vim/plugged')
 
@@ -64,33 +74,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'townk/vim-autoclose'
 Plug 'crusoexia/vim-monokai'
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
 
 call plug#end()
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
-
-" Sets <leader>
-let mapleader=' '
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Disable search highlighting with <leader><cr>
-map <silent> <leader><cr> :noh<cr>
-
-" Tab Management
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader><left> :tabnext<cr>
-map <leader><right> :tabprev<cr>
