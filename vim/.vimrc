@@ -5,6 +5,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETUP
 
+filetype plugin on
+
 let vim_plug_just_installed = 0
 let vim_plug_path = expand('~/.vim/autoload/plug.vim')
 if !filereadable(vim_plug_path)
@@ -65,7 +67,6 @@ hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
 
 " Instant Markdown
 let g:instant_markdown_slow = 1
-let g:instant_markdown_browser = "safari --new-window"
 
 call plug#begin('~/.vim/plugged')
 
