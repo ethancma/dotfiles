@@ -31,7 +31,9 @@ alias la="ls -a"
 alias c=clear
 alias desk="cd ~/Desktop"
 alias python="python3"
+alias pip="pip3"
 alias vi="vim"
+alias chmox=chmod +x
 
 # System
 alias finder="open -a Finder"
@@ -47,11 +49,11 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 
 # Config
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias vimconfig="cd $HOME/dotfiles/vim"
 
 # -- Functions
-
 function mkcd() {
     mkdir -p "$@" && cd "$@";
 }
