@@ -36,6 +36,7 @@ set expandtab
 set smartindent
 set autoindent
 set backspace=indent,eol,start
+set signcolumn=yes
 
 " Linebreak / Wrapping
 set wrap
@@ -66,6 +67,8 @@ set wildignore+=.swp
 set lazyredraw
 set encoding=utf8
 set title
+set hidden
+set updatetime=300
 
 " Disable annoying sounds
 set noerrorbells        " Disable annoying sounds 
@@ -89,7 +92,25 @@ hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
 " let g:instant_markdown_slow = 1
 let g:instant_markdown_mathjax = 1
 
-let g:vimsence_ignored_directories = 'ethanma'
+" let g:vimsence_ignored_directories = 'ethanma'
+
+" NERDTree
+let g:NERDTreeGitStatusWithFlags = 1
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:nerdtree_tabs_focus_on_files=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+" Coc Config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-python',
+  \ 'coc-eslint', 
+  \ 'coc-json', 
+  \ ]
 
 call plug#begin('~/.vim/plugged')
 
@@ -100,6 +121,10 @@ Plug 'townk/vim-autoclose'
 Plug 'crusoexia/vim-monokai'
 Plug 'suan/vim-instant-markdown'
 Plug 'scrooloose/nerdtree'
-Plug 'vimsence/vimsence'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+" Plug 'vimsence/vimsence'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
