@@ -1,0 +1,10 @@
+.DS_Store
+*.o
+nvim/plugged
+nvim/autoload
+nvim/coc-settings.json
+coc/
+filezilla/
+iterm2/
+rstudio/
+configstore/
