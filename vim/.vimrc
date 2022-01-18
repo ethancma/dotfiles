@@ -21,6 +21,26 @@ if vim_plug_just_installed
 	:execute 'source '.fnameescape(vim_plug_path)
 endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
+Plug 'townk/vim-autoclose'
+Plug 'crusoexia/vim-monokai'
+" Plug 'morhetz/gruvbox'
+Plug 'suan/vim-instant-markdown'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
 source $HOME/dotfiles/vim/mappings.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,8 +112,6 @@ hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
 " let g:instant_markdown_slow = 1
 let g:instant_markdown_mathjax = 1
 
-" let g:vimsence_ignored_directories = 'ethanma'
-
 " NERDTree
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeChDirMode=2
@@ -108,23 +126,6 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-python',
-  \ 'coc-eslint', 
-  \ 'coc-json', 
+  \ 'coc-clangd',
+  \ 'coc-json',
   \ ]
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-commentary'
-Plug 'townk/vim-autoclose'
-Plug 'crusoexia/vim-monokai'
-Plug 'suan/vim-instant-markdown'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-" Plug 'vimsence/vimsence'
-Plug 'airblade/vim-gitgutter'
-
-call plug#end()
