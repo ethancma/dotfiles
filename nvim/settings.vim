@@ -44,6 +44,8 @@ set encoding=utf8
 set title
 set hidden
 set updatetime=300
+set shortmess+=c
+set nofoldenable
 
 " Disable annoying sounds
 set noerrorbells        " Disable annoying sounds 
@@ -57,7 +59,7 @@ set nowb
 set noswapfile
 
 " Colors
-" hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
+hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations
@@ -78,8 +80,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 " Coc Config
 let g:coc_global_extensions = [
   \ 'coc-snippets',
-  \ 'coc-pairs',
   \ 'coc-python',
   \ 'coc-clangd',
-  \ 'coc-json',
   \ ]

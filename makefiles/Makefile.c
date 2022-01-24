@@ -20,3 +20,6 @@ $(EXECBIN): $(OBJECTS)
 
 clean:
 	rm -f $(EXECBIN) $(OBJECTS)
+
+format: clean
+    find . -regex '.*\.\(cpp\|c\|h\)' -exec clang-format -style=file -i {} \;
