@@ -5,7 +5,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " SETUP
 
-filetype plugin on
+filetype plugin indent on
 
 " Setup plugins on fresh install.
 if empty(glob("~/.config/nvim/autoload/plug.vim"))
@@ -28,5 +28,6 @@ source $HOME/.config/nvim/plugins.vim
 syntax on
 colorscheme monokai
 
+source $HOME/.config/nvim/augroups.vim
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/settings.vim
