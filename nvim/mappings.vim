@@ -19,6 +19,9 @@ runtime! ftplugin/man.vim
 " Only write.
 nnoremap <leader>w <esc>:w<cr>
 
+" Only quit.
+nnoremap <leader>q <esc>:q<cr>
+
 " Easily exit insert mode
 inoremap jj <Esc>
 
@@ -74,7 +77,7 @@ nnoremap <leader>gl :Git log<cr>
 nnoremap <leader>gp :Git push<cr>
 nnoremap <leader>gpl :Git pull<cr>
 nnoremap <leader>gd :Gdiffsplit<cr>
-nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gb :Git blame<cr>
 nnoremap <leader>gst :Git status<cr>
 
 " Toggle sign column.
