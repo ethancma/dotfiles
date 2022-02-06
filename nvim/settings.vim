@@ -86,6 +86,21 @@ let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:nerdtree_tabs_focus_on_files=1
 
+" Vim move - uses Control+[hjkl]
+let g:move_key_modifier = 'C'
+
+" Goyo
+let g:goyo_width = 110
+
+" Presence
+" General options
+let g:presence_auto_update         = 1
+let g:presence_debounce_timeout    = 10
+let g:presence_enable_line_number  = 1
+let g:presence_blacklist           = []
+let g:presence_buttons             = 0
+let g:presence_file_assets         = {}
+
 " Coc Config
 let g:coc_global_extensions = [
   \ 'coc-clangd',
