@@ -1,16 +1,26 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " augroups
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup cursorgroup
+    autocmd!
 
-" Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+    " Highlight symbol under cursor on CursorHold
+    autocmd CursorHold * silent call CocActionAsync('highlight')
 
-autocmd BufWinEnter,WinEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
+augroup END
 
-autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+augroup navgroup
+    autocmd!
+
+    " Exit Vim if NERDTree is the only window left.
+    autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+    " Return to last edit position when opening files
+    autocmd BufReadPost * call SetCursorPosition()
+
+augroup END
+
 
 augroup configgroup
     autocmd!
@@ -25,10 +35,17 @@ augroup configgroup
 
 augroup END
 
+
 augroup prewrite
     autocmd!
 
     " Clean up trailing white spaces
     autocmd BufWritePre * call StripTrailingWhitespace()
     autocmd FileType markdown let b:noStripWhitespace=1
+    autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+
+    " Start in insert mode when opening neovim terminal
+    autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
 augroup END
