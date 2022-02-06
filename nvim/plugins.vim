@@ -12,9 +12,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'suan/vim-instant-markdown'
 Plug 'crusoexia/vim-monokai'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'vimsence/vimsence'
 
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'vimsence/vimsence'
+Plug 'andweeb/presence.nvim'
+
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'matze/vim-move'
