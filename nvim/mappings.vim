@@ -26,7 +26,7 @@ inoremap jj <Esc>
 nnoremap <cr> o<Esc>
 
 " Easy clipboard copy
-vnoremap <silent><leader>c :w !pbcopy<CR><CR>
+xnoremap <silent><leader>c :w !pbcopy<CR><CR>
 
 " Easy clipboard paste
 nnoremap <silent><leader>v :r !pbpaste<CR><CR>
@@ -64,6 +64,21 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
+
+" Git
+nnoremap <leader>gs :Git<cr>
+nnoremap <leader>ga :Gwrite<cr>
+nnoremap <leader>gr :Gread<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gl :Git log<cr>
+nnoremap <leader>gp :Git push<cr>
+nnoremap <leader>gpl :Git pull<cr>
+nnoremap <leader>gd :Gdiffsplit<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gst :Git status<cr>
+
+" Toggle sign column.
+nnoremap <leader>s :call ToggleSignColumn()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions
@@ -106,4 +121,12 @@ endfunction
 function! OpenTerminal()
   split term://zsh
   resize 10
+endfunction
+
+function! ToggleSignColumn()
+  if (&signcolumn == "yes")
+    set signcolumn=no
+  else
+    set signcolumn=yes
+  endif
 endfunction
