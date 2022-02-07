@@ -32,7 +32,8 @@ alias c=clear
 alias desk="cd ~/Desktop"
 alias python="python3"
 alias pip="pip3"
-alias vi="vim"
+alias vi="nvim"
+alias vim="nvim"
 alias chmox=chmod +x
 
 # System
@@ -49,9 +50,12 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 
 # Config
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias vimconfig="cd $HOME/dotfiles/vim"
+alias zshrc="nvim ~/.zshrc"
+alias nvimconfig="nvim $HOME/.config/nvim/init.vim"
+alias nvimplugins="nvim $HOME/.config/nvim/plugins.vim"
+alias nvimmappings="nvim $HOME/.config/nvim/mappings.vim"
+alias nvimsettings="nvim $HOME/.config/nvim/settings.vim"
+alias nvimaugroup="nvim $HOME/.config/nvim/augroups.vim"
 
 # -- Functions
 function mkcd() {
