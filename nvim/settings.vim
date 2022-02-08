@@ -49,7 +49,7 @@ set shortmess+=c
 set showcmd
 set showmatch           " Matching brackets/quotes/parenthesis
 set title
-set updatetime=300
+set updatetime=100
 set ttyfast
 
 " Disable annoying sounds
@@ -87,7 +87,7 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:nerdtree_tabs_focus_on_files=1
 
 " Vim move - uses Control+[hjkl]
-let g:move_key_modifier = 'C'
+let g:move_key_modifier = 'A'
 
 " Goyo
 let g:goyo_width = 110
