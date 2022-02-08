@@ -16,7 +16,16 @@ map <leader><right> :tabnext<cr>
 
 runtime! ftplugin/man.vim
 
+" Only write.
+nnoremap <leader>w <esc>:w<cr>
+
+" Only quit.
+nnoremap <leader>q <esc>:q<cr>
+
 inoremap jj <Esc>
+
+" Enter to get new line
+nnoremap <cr> o<Esc>
 
 " Use <cr> to confirm completion.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
