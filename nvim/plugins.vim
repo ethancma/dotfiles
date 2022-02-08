@@ -13,11 +13,11 @@ Plug 'suan/vim-instant-markdown'
 Plug 'crusoexia/vim-monokai'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" Plug 'vimsence/vimsence'
-Plug 'andweeb/presence.nvim'
+" Plug 'andweeb/presence.nvim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/goyo.vim'
 Plug 'matze/vim-move'
+Plug 'tpope/vim-surround'
 
 call plug#end()
