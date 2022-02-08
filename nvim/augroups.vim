@@ -1,13 +1,13 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " augroups
 
-augroup cursorgroup
-    autocmd!
+" augroup cursorgroup
+"     autocmd!
 
     " Highlight symbol under cursor on CursorHold
-    autocmd CursorHold * silent call CocActionAsync('highlight')
+    " autocmd CursorHold * silent call CocActionAsync('highlight')
 
-augroup END
+" augroup END
 
 
 augroup navgroup
@@ -18,6 +18,9 @@ augroup navgroup
 
     " Return to last edit position when opening files
     autocmd BufReadPost * call SetCursorPosition()
+
+    " Vsplit new help buffers
+    autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 
 augroup END
 
