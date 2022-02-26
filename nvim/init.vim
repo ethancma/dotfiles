@@ -31,3 +31,5 @@ colorscheme monokai
 source $HOME/.config/nvim/augroups.vim
 source $HOME/.config/nvim/mappings.vim
 source $HOME/.config/nvim/settings.vim
+source $HOME/.config/nvim/lsp.vim
+" source $HOME/.config/nvim/lsp.lua

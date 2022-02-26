@@ -4,6 +4,13 @@
 " Sets <leader>
 let mapleader=';'
 
+" LSP
+" nnoremap K <cmd>lua vim.lsp.buf.hover()<cr>
+" nnoremap gd <cmd>lua vim.lsp.buf.definition()<cr>
+" nnoremap gr <cmd>lua vim.lsp.buf.references()<cr>
+" nnoremap rn <cmd>lua vim.lsp.buf.rename()<cr>
+" nnoremap <leader>ca <cmd>lua vim.lsp.buf.rename()<cr>
+
 " Disable search highlighting with <leader><cr>
 map <silent> <leader><cr> :noh<cr>
 
@@ -25,9 +32,6 @@ nnoremap <leader>q <esc>:q<cr>
 " Easily exit insert mode
 inoremap jj <Esc>
 
-" Enter to get new line
-nnoremap <cr> o<Esc>
-
 " Easy clipboard copy
 xnoremap <silent><leader>c :w !pbcopy<CR><CR>
 
@@ -38,10 +42,7 @@ nnoremap <silent><leader>v :r !pbpaste<CR><CR>
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Control-n to toggle NERDTree
-nmap <C-n> :NERDTreeToggle<CR>
-
-" Remap for rename current word
-nmap <F2> <Plug>(coc-rename)
+nmap <C-c> :NERDTreeToggle<CR>
 
 " navigate split screens easily
 nmap <silent> <c-k> :wincmd k<CR>
@@ -50,11 +51,11 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" if has('nvim')
+"   inoremap <silent><expr> <c-space> coc#refresh()
+" else
+"   inoremap <silent><expr> <c-@> coc#refresh()
+" endif
 
 " Opens neovim builtin terminal
 nnoremap <c-t> :call OpenTerminal()<CR>
@@ -87,29 +88,29 @@ nnoremap <leader>s :call ToggleSignColumn()<cr>
 " Functions
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   elseif (coc#rpc#ready())
+"     call CocActionAsync('doHover')
+"   else
+"     execute '!' . &keywordprg . " " . expand('<cword>')
+"   endif
+" endfunction
 
-" Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" " Use tab for trigger completion with characters ahead and navigate.
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1] =~# '\s'
+" endfunction
 
 function! StripTrailingWhitespace()
     " Only strip if the b:noStripeWhitespace variable isn't set

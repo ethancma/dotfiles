@@ -65,9 +65,6 @@ set noswapfile
 set nowb
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
-" Colors
-hi CocErrorFloat ctermfg=124 ctermbg=245 guifg=#FF0000 guibg=#FF0000
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configurations
 
@@ -96,14 +93,14 @@ let g:goyo_width = 110
 " General options
 let g:presence_auto_update         = 1
 let g:presence_debounce_timeout    = 10
-let g:presence_enable_line_number  = 1
+let g:presence_enable_line_number  = 0
 let g:presence_blacklist           = []
-let g:presence_buttons             = 0
+let g:presence_buttons             = 1
 let g:presence_file_assets         = {}
 
 " Coc Config
-let g:coc_global_extensions = [
-  \ 'coc-clangd',
-  \ 'coc-python',
-  \ 'coc-snippets',
-  \ ]
+" let g:coc_global_extensions = [
+"   \ 'coc-clangd',
+"   \ 'coc-python',
+"   \ 'coc-snippets',
+"   \ ]
