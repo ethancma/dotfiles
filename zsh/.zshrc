@@ -2,6 +2,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/ethanma/.oh-my-zsh"
 
@@ -56,6 +58,7 @@ alias nvimplugins="nvim $HOME/.config/nvim/plugins.vim"
 alias nvimmappings="nvim $HOME/.config/nvim/mappings.vim"
 alias nvimsettings="nvim $HOME/.config/nvim/settings.vim"
 alias nvimaugroup="nvim $HOME/.config/nvim/augroups.vim"
+alias nvimlsp="nvim $HOME/.config/nvim/lsp.vim"
 
 # -- Functions
 function mkcd() {
@@ -64,3 +67,4 @@ function mkcd() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
